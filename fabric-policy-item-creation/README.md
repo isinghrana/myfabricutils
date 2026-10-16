@@ -22,7 +22,8 @@ to write code.
 Pick the setup notebook that fits your situation:
 
 | Notebook | Use it to | What you type in | Permissions you need |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
+ --- |
 | [setup_policy_existing_workspaces.ipynb](./setup_policy_existing_workspaces.ipynb) | Set up the policy when your three workspaces **already exist** | The three workspace names | **Contributor** or higher on Workspace 1<br>**Viewer** or higher on Workspaces 2 and 3<br>**Policies** tenant setting turned on for you<br>*Optional:* **Capacity Admin**. Without it, the policy set is still created, and the notebook prints a message to send to your Capacity Admin to turn it on. |
 | [setup_policy_new_workspaces.ipynb](./setup_policy_new_workspaces.ipynb) | Set up the policy and **create** the workspaces on a capacity | A capacity ID and the three workspace names | **Capacity Contributor** or higher<br>**Create workspaces** and **Policies** tenant settings turned on for you<br>*Optional:* **Capacity Admin**. Without it, the policy set is still created, and the notebook prints a message to send to your Capacity Admin to turn it on. |
 | [cleanup_policy.ipynb](./cleanup_policy.ipynb) | **Turn off** the policy, and optionally **delete** the workspaces | The same names you used for setup, and `DELETE_WORKSPACES` (`False` by default) | **Capacity Admin**<br>*Optional:* **Admin** on each workspace, only if you delete the workspaces (`DELETE_WORKSPACES = True`) |
@@ -41,13 +42,6 @@ Pick the setup notebook that fits your situation:
 
 If the **Load the setup functions** cell fails because the notebook can't be found, import
 `policy_setup_functions.ipynb` into the same workspace, and run again.
-
-Each step prints what it did. If something goes wrong, the notebook **stops** and tells you what happened and
-what to do, such as which permission is missing and whom to ask. It's safe to run any notebook again: setup reuses
-existing workspaces and the policy set and replaces the rules (never duplicates them), and cleanup skips anything
-that's already gone.
-
-For the roles and tenant settings each notebook needs, see [the notebooks table](#the-notebooks).
 
 ## What you'll see
 
@@ -92,3 +86,8 @@ one line of code per step:
 
 You never run `policy_setup_functions` yourself. Its code cells are collapsed, and each section says which notebook
 uses it.
+
+Each step prints what it did. If something goes wrong, the notebook **stops** and tells you what happened and
+what to do, such as which permission is missing and whom to ask. It's safe to run any notebook again: setup reuses
+existing workspaces and the policy set and replaces the rules (never duplicates them), and cleanup skips anything
+that's already gone.
