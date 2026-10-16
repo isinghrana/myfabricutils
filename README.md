@@ -1,4 +1,6 @@
-# myfabricutils
+# My Microsoft Fabric Samples, Demos and Utilities
+
+Companion repository for the blog post [Using Microsoft Fabric Policies to Govern Workspace Item Creation](https://isinghrana.medium.com/using-microsoft-fabric-policies-to-govern-workspace-item-creation-101ae66f5f7f).
 
 Hands-on demos and utilities for [Microsoft Fabric](https://learn.microsoft.com/fabric/). Each demo is in its own
 folder, with a README that explains what it shows and how to run it.
