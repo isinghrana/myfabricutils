@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+*.ipynb text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.excalidraw text eol=lf
+
+*.png binary
+*.jpg binary
+*.pdf binary
