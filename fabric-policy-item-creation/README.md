@@ -40,7 +40,9 @@ Pick the setup notebook that fits your situation:
    the name `policy_setup_functions`. For cleanup with workspace deletion, use a workspace that isn't one of the
    three being deleted.
 3. Open your notebook, and type your values in the **Settings** cell. Use workspace names that make the roles clear;
-   the defaults are listed below.
+   the defaults are listed below. To find a capacity ID, go to **OneLake catalog** > **Govern** > **Capacities**
+   (you need permission to view capacity information). The steps that create the policy set and add its rules print the exact JSON they
+   send to the Fabric REST APIs, so you can copy and reuse it.
 4. Select **Run all**.
 
 If the **Load the setup functions** cell fails because the notebook can't be found, import
@@ -53,8 +55,8 @@ After setup, wait up to 15 minutes, and then try creating items:
 | Workspace role | Default name | Purpose | Can create |
 | --- | --- | --- | --- |
 | **Policy store (Workspace 1)** | `Policy-Admin-Store` | Holds the **policy set** item. Keeping it in its own workspace separates governance from the governed workspaces. | ✅ Everything - it isn't restricted (Rule 3) |
-| **Data Engineering (Workspace 2)** | `Policy-DA-Blocked` | Allows core Data Engineering items. | ✅ Lakehouse, Data pipeline, Notebook<br>❌ Data agent, Warehouse, everything else |
-| **Data Engineering + AI (Workspace 3)** | `Policy-DA-Allowed` | Allows the core Data Engineering items plus Data agent. | ✅ Lakehouse, Data pipeline, Notebook, **Data agent**<br>❌ Warehouse, everything else |
+| **Data Engineering (Workspace 2)** | `Policy-DataEngineering` | Allows core Data Engineering items. | ✅ Lakehouse, Data pipeline, Notebook<br>❌ Data agent, Warehouse, everything else |
+| **Data Engineering + AI (Workspace 3)** | `Policy-DataEngineering-AI` | Allows the core Data Engineering items plus Data agent. | ✅ Lakehouse, Data pipeline, Notebook, **Data agent**<br>❌ Warehouse, everything else |
 | Any other workspace on the capacity | - | Isn't named in the policy, so it's unaffected. | ✅ Everything (Rule 3) |
 
 The **Data Engineering** and **Data Engineering + AI** workspaces must be on the **same** Fabric capacity, because
